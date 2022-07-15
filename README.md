@@ -2,9 +2,9 @@
 
 node dependencies: 
 
-ascii-table
-axios
-chalk@4.1.2
-discord.js
-glob
+ascii-table,
+axios,
+chalk@4.1.2,
+discord.js,
+glob,
 (npm i <Dependencie>)
