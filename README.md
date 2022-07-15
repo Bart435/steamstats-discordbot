@@ -9,6 +9,7 @@ axios,
 chalk@4.1.2, 
 discord.js, 
 glob 
+node-fetch
 
 (npm i *Dependencie*)
 
