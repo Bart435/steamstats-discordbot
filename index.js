@@ -6,7 +6,7 @@ const PG = promisify(glob);
 const Ascii = require('ascii-table');
 const chalk = require('chalk');
 const { errorMsg, unhandledRejectionMsg, uncaughtExceptionMsg, uncaughtExceptionMonitorMsg, multipleResolvesMsg, warningMsg } = require('./src/configs/errorMessage.json');
-require('dotenv').config();
+const { discord_token } = require('./config.json');
 
 client.commands = new Collection();
 
@@ -56,9 +56,7 @@ process.on('multipleResolves', (type, promise, reason) => {
     }
 });
 process.on('warning', (warn) => {
-    if (warningMsg) {
-        console.log(chalk.blue(warn));
-    }
+    if (warningMsg) console.log(chalk.blue(warn));
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(discord_token);
