@@ -8,8 +8,8 @@ ascii-table,
 axios, 
 chalk@4.1.2, 
 discord.js, 
-glob 
-node-superfetch
+glob, 
+node-superfetch,
 @discordjs/builders
 
 (npm i *Dependencie*)
