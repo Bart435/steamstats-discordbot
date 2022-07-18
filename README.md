@@ -9,8 +9,7 @@ axios,
 chalk@4.1.2, 
 discord.js, 
 glob, 
-node-superfetch,
-@discordjs/builders
+node-superfetch
 
 (npm i *Dependencie*)
 
