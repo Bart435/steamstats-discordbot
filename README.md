@@ -32,6 +32,10 @@ https://developer.valvesoftware.com/wiki/Steam_Web_API
 https://wiki.teamfortress.com/wiki/WebAPI
 
 ## Setting-up guide
+
+### Tutorial video
+
+### Links needed
 <!--installing node.js-->
 https://nodejs.org/en/ 
 <!--getting the bot ready-->
