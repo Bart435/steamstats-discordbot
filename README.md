@@ -14,17 +14,31 @@ node-superfetch@0.2.3
 (npm i *Dependencie*)
 
 ## Documentation packages & api
-
-
+<!--ascii-table-->
+https://www.npmjs.com/package/ascii-table
+<!--axios-->
+https://www.npmjs.com/package/axios
+<!--chalk-->
+https://www.npmjs.com/package/chalk
+<!--discord.js-->
+https://www.npmjs.com/package/discord.js
+<!--glob-->
+https://www.npmjs.com/package/glob
+<!--node-superfetch-->
+https://www.npmjs.com/package/node-superfetch
+<!--steam web api-->
+https://developer.valvesoftware.com/wiki/Steam_Web_API
+<!--tf web api-->
+https://wiki.teamfortress.com/wiki/WebAPI
 
 ## Setting-up guide
-
+<!--installing node.js-->
 https://nodejs.org/en/ 
-
+<!--getting the bot ready-->
 https://discord.com/developers/applications
-
+<!--getting the steam api key-->
 https://steamcommunity.com/dev/apikey
-
+<!--cloning the repo-->
 git clone https://github.com/Bart435/steam-checker-bot.git
 
 ## License
