@@ -19,6 +19,8 @@ https://nodejs.org/en/
 
 https://discord.com/developers/applications
 
+git clone https://github.com/Bart435/steam-checker-bot.git
+
 ## License
 
 This bot is created by https://github.com/Bart435
