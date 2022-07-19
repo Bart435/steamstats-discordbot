@@ -19,6 +19,8 @@ https://nodejs.org/en/
 
 https://discord.com/developers/applications
 
+https://steamcommunity.com/dev/apikey
+
 git clone https://github.com/Bart435/steam-checker-bot.git
 
 ## License
