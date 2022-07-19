@@ -35,7 +35,10 @@ https://wiki.teamfortress.com/wiki/WebAPI
 
 ### Tutorial video
 
+https://www.youtube.com/watch?v=j0nFJG12SHQ
+
 ### Links needed
+
 <!--installing node.js-->
 https://nodejs.org/en/ 
 <!--getting the bot ready-->
