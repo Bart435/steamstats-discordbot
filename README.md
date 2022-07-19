@@ -13,6 +13,10 @@ node-superfetch@0.2.3
 
 (npm i *Dependencie*)
 
+## Documentation used packages & api
+
+
+
 ## Setting-up guide
 
 https://nodejs.org/en/ 
