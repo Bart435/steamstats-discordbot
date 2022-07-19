@@ -73,7 +73,7 @@ module.exports = {
                         const GetBadges = `http://api.steampowered.com/IPlayerService/GetBadges/v0001/?key=${steamapi_key}&steamid=${steamID}&format=json`;
                         const getPlayer = await fetch(GetPlayerSummaries).then(res => res.json()).then(json => json['response']);
                         const getOwned = await fetch(GetOwnedGames).then(res => res.json()).then(json => json['response']);
-                        const getFriends = await fetch(GetFriendList).then(res => res.json()).then(json => json['friendslist']);
+                        const getFriends = await fetch(GetFriendList).then(res => res.json()).then(json => json);
                         const getbans = await fetch(GetPlayerBans).then(res => res.json()).then(json => json['players']['0']);
                         const badges = await fetch(GetBadges).then(res => res.json()).then(json => json['response']);
                         // converting unix time to date
@@ -104,7 +104,7 @@ module.exports = {
                         if (getPlayer['players']['0']['personastate'] === 6) Status = 'looking to play.';
                         if (getPlayer['players']['0']['timecreated']) timeCreated = new Date(a).toLocaleString('en-gb', format);
                         if (getOwned['game_count']) gameCount = getOwned['game_count'];
-                        if (getPlayer['players']['0']['communityvisibilitystate'] === 3) totalFriends = getFriends['friends'].length;
+                        if (getFriends['friendslist']) totalFriends = getFriends['friendslist']['friends'].length;
                         if (getPlayer['players']['0']['loccountrycode']) country = getPlayer['players']['0']['loccountrycode'];
                         if (getPlayer['players']['0']['gameextrainfo']) gameInfo = getPlayer['players']['0']['gameextrainfo'];
                         if (badges['player_xp']) {

@@ -4,16 +4,19 @@ I created this project due to being sad and bored. I'm trying to get my hands on
 
 ## Dependencies
 
-ascii-table, 
-axios, 
+ascii-table@0.0.9, 
+axios@0.27.2, 
 chalk@4.1.2, 
-discord.js, 
-glob, 
-node-superfetch
+discord.js@13.8.1, 
+glob@8.0.3, 
+node-superfetch@0.2.3
 
 (npm i *Dependencie*)
 
 ## Setting-up guide
+
+https://nodejs.org/en/
+https://discord.com/developers/applications
 
 ## License
 
