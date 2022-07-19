@@ -13,7 +13,7 @@ node-superfetch@0.2.3
 
 (npm i *Dependencie*)
 
-## Documentation used packages & api
+## Documentation packages & api
 
 
 
