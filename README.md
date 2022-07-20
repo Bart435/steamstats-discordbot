@@ -35,7 +35,7 @@ https://wiki.teamfortress.com/wiki/WebAPI
 
 ### Tutorial video
 
-https://www.youtube.com/watch?v=j0nFJG12SHQ
+https://www.youtube.com/watch?v=faholwUqh4k
 
 ### Links needed
 
