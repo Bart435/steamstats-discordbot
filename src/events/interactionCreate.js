@@ -1,29 +1,19 @@
-const { Client, CommandInteraction, MessageEmbed } = require('discord.js');
-
+const { CommandInteraction, InteractionType } = require("discord.js");
 
 module.exports = {
-    name: 'interactionCreate',
+    name: "interactionCreate",
     /**
      *
      * @param {CommandInteraction} interaction
-     * @param {Client*} client
      */
-
-    async execute(interaction, client) {
-
-
-        if (interaction.isButton()) return;
-        if (interaction.isCommand() || interaction.isContextMenu) {
-           const command = client.commands.get(interaction.commandName);
-
-            if (!command) {
-                return interaction.reply({ embeds: [
-                new MessageEmbed()
-                .setColor('RED')
-                .setDescription('⛔ An error occured while running this command.'),
-            ], ephemeral: true }) && client.commands.delete(interaction.commandName);
-            }
+    execute(interaction, client) {
+        const command = client.commands.get(interaction.commandName);
+        if (interaction.isChatInputCommand()) {
+            if (!command) return interaction.reply({ content: "This command is outdated!" });
             command.execute(interaction, client);
+        }
+        if (interaction.type == InteractionType.ApplicationCommandAutocomplete) {
+            command.autocomplete(interaction, client);
         }
     },
 };

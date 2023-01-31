@@ -1,0 +1,19 @@
+{
+  "name": "steam-checker-bot",
+  "version": "1.0.0",
+  "description": "Checks for some information about steam users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "steam-checker-bot"
+  },
+  "author": "Bart435",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "node-superfetch": "^0.2.3"
+  }
+}

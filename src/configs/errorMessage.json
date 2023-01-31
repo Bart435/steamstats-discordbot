@@ -1,8 +1,0 @@
-{
-    "errorMsg": true,
-    "unhandledRejectionMsg": true,
-    "uncaughtExceptionMsg": true,
-    "uncaughtExceptionMonitorMsg": true,
-    "multipleResolvesMsg": true,
-    "warningMsg": true
-}

@@ -1,12 +1,8 @@
-const { Client } = require('discord.js');
-const chalk = require('chalk');
 module.exports = {
-    name: 'ready',
+    name: "ready",
     once: true,
-    /**
-    *  @param {Client} client
-    */
-    async execute(client) {
-        console.log(chalk.yellow('Client is ready!'));
+    execute(client) {
+        console.log('\x1b[34m%s\x1b[0m', '[author] bart435');
+        console.log('\x1b[32m%s\x1b[0m', '[discord] connected');
     },
 };

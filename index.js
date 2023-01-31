@@ -1,62 +1,32 @@
-const { Client, Collection } = require('discord.js');
-const client = new Client({ intents: 32767 });
-const { promisify } = require('util');
-const { glob } = require('glob');
-const PG = promisify(glob);
-const Ascii = require('ascii-table');
-const chalk = require('chalk');
-const { errorMsg, unhandledRejectionMsg, uncaughtExceptionMsg, uncaughtExceptionMonitorMsg, multipleResolvesMsg, warningMsg } = require('./src/configs/errorMessage.json');
-const { discord_token } = require('./config.json');
+// Getting client intents
+const { Client, GatewayIntentBits, Partials, Collection } = require("discord.js");
+const { Guilds, GuildMembers, GuildMessages, GuildMessageReactions, MessageContent } = GatewayIntentBits;
+const { User, Message, GuildMember, ThreadMember } = Partials;
 
-client.commands = new Collection();
-
-['Events', 'Commands'].forEach(handler => {
-    require(`./src/Handlers/${handler}`)(client, PG, Ascii);
+// Creating the client
+const client = new Client({
+    intents: [Guilds, GuildMembers, GuildMessages, GuildMessageReactions, MessageContent],
+    partials: [User, Message, GuildMember, ThreadMember],
 });
+
+// requiring the handlers
+const { loadCommands } = require("./src/Handlers/commandHandler");
+const { loadEvents } = require("./src/Handlers/eventHandler");
+
+// Adding collections to the client
+client.commands = new Collection();
+client.config = require("./config.json");
 
 // error checks
-client.on('error', err => {
-    if (errorMsg) {
-        console.log(chalk.red(err));
-    }
-    else {
-        console.log(chalk.red('An error occured'));
-    }
-});
-process.on('unhandledRejection', (reason, p) => {
-    if (unhandledRejectionMsg) {
-        console.log(chalk.red(reason, p));
-    }
-    else {
-        console.log(chalk.red('An error occured'));
-    }
-});
-process.on('uncaughtException', (err, origin) => {
-    if (uncaughtExceptionMsg) {
-        console.log(chalk.red(err, origin));
-    }
-    else {
-        console.log(chalk.red('An error occured'));
-    }
-});
-process.on('uncaughtExceptionMonitor', (err, origin) => {
-    if (uncaughtExceptionMonitorMsg) {
-        console.log(chalk.red(err, origin));
-    }
-    else {
-        console.log(chalk.red('An error occured'));
-    }
-});
-process.on('multipleResolves', (type, promise, reason) => {
-    if (multipleResolvesMsg) {
-        console.log(chalk.red(type, promise, reason));
-    }
-    else {
-        console.log(chalk.red('An error occured'));
-    }
-});
-process.on('warning', (warn) => {
-    if (warningMsg) console.log(chalk.blue(warn));
-});
+client.on("error", (err) => console.log(err));
+process.on("unhandledRejection", (reason, p) => console.log(reason, p));
+process.on("uncaughtException", (err, origin) => console.log(err, origin));
+process.on("uncaughtExceptionMonitor", (err, origin) => console.log(err, origin));
+process.on("warning", (warn) => console.log(warn));
 
-client.login(discord_token);
+// Client login and initialize command & events
+client.login(client.config.discord_token)
+    .then(() => {
+        loadCommands(client);
+        loadEvents(client);
+    }).catch((err) => console.log(err));
