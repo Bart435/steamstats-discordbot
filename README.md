@@ -36,7 +36,7 @@ https://discord.com/developers/applications
 <!--getting the steam api key-->
 https://steamcommunity.com/dev/apikey
 <!--cloning the repo-->
-git clone https://github.com/Bart435/steam-checker-bot.git
+git clone https://github.com/Bart435/steamstats-discordbot.git
 
 ## License
 
