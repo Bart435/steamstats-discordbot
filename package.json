@@ -1,5 +1,5 @@
 {
-  "name": "steam-checker-bot",
+  "name": "steamstats-discordbot",
   "version": "1.0.0",
   "description": "Checks for some information about steam users",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "steam-checker-bot"
+    "url": "steamstats-discordbot"
   },
   "author": "Bart435",
   "license": "ISC",
